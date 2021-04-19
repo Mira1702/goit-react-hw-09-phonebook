@@ -1,0 +1,10 @@
+.homeDiv {
+    background-color: rgb(231, 229, 229);
+    display: grid;
+    justify-content: center;
+}
+.homeHeader {
+    font-family: 'Roboto', sans-serif;
+    font-size: 25px;
+    text-align: center;
+}
