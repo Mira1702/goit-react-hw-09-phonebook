@@ -1,0 +1,9 @@
+.navigation {
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+    margin-right: 10px;
+}
+.navigation:hover {
+    color: red;
+}

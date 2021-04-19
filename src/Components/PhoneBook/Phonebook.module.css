@@ -1,0 +1,29 @@
+.form {
+    /* border: 1px solid black;
+    padding: 15px;
+    width: 400px; */
+    display: grid;
+    justify-content: center;
+}
+
+.label {
+    display: grid;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.button {
+    width: 130px;
+    margin: auto;
+}
+.phoneDiv {
+    background-color: rgb(231, 229, 229);
+    display: grid;
+    justify-content: center;
+}
+.phoneHeader {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    text-align: center;
+}

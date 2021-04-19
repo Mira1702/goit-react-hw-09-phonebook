@@ -1,0 +1,16 @@
+.filterDiv {
+    background-color: rgb(231, 229, 229);
+    display: grid;
+    justify-content: center;
+}
+.filterHeader {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    text-align: center;
+}
+.filterLabel {
+    display: grid;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
