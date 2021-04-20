@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import shortid from 'shortid';
+// import shortid from 'shortid';
 import * as actions from '../../Redux/contacts/actions';
 import { getFilter } from '../../Redux/contacts/selectors';
 import styles from './Filter.module.css';

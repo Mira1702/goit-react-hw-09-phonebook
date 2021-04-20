@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { connect } from 'react-redux';
+
 import * as authOperations from '../../Redux/auth/auth-operations';
 import styles from './Login.module.css';
 
 function LoginView() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+
     const dispatch = useDispatch();
 
     const handleChange = (event) => {
@@ -21,7 +22,7 @@ function LoginView() {
                 setPassword(value);
                 break;
             default:
-                console.warn(`Тип поля name - ${name} не обрабатывается`);
+                return;
         }
     };
 
@@ -72,6 +73,8 @@ function LoginView() {
         </div>
     );
 }
+
+export default LoginView;
 
 // class LoginView extends Component {
 //     state = {
@@ -129,8 +132,8 @@ function LoginView() {
 //     }
 // }
 
-const mapDispatchToProps = {
-    onLogin: authOperations.login,
-};
+// const mapDispatchToProps = {
+//     onLogin: authOperations.login,
+// };
 
-export default connect(null, mapDispatchToProps)(LoginView);
+// export default connect(null, mapDispatchToProps)(LoginView);
