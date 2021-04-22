@@ -13,17 +13,24 @@ function PhoneBook() {
     const nameInputId = shortid.generate();
     const numberInputId = shortid.generate();
 
-    const handleChange = (event) => {
-        const { name, value } = event.currentTarget;
-        switch (name) {
-            case 'name':
-                setName(value);
-                break;
-
-            default:
-                return;
-        }
+    const handleNameChange = (event) => {
+        setName(event.target.value);
     };
+    const handleNumberChange = (event) => {
+        setNumber(event.target.value);
+    };
+
+    // const handleChange = (event) => {
+    //     const { name, value } = event.currentTarget;
+    //     switch (name) {
+    //         case 'name':
+    //             setName(value);
+    //             break;
+
+    //         default:
+    //             return;
+    //     }
+    // };
 
     const reset = () => {
         setName('');
@@ -55,7 +62,7 @@ function PhoneBook() {
                         type="text"
                         name="name"
                         value={name}
-                        onChange={handleChange}
+                        onChange={handleNameChange}
                         id={nameInputId}
                     ></input>
                 </label>
@@ -65,7 +72,7 @@ function PhoneBook() {
                         type="tel"
                         name="number"
                         value={number}
-                        onChange={handleChange}
+                        onChange={handleNumberChange}
                         id={numberInputId}
                     ></input>
                 </label>
