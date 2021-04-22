@@ -10,39 +10,50 @@ function RegisterView() {
     const [password, setPassword] = useState('');
     const dispatch = useDispatch();
 
-    const handleChange = (event) => {
-        const { name, value } = event.currentTarget;
-
-        switch (name) {
-            case 'name':
-                setName(value);
-                break;
-
-            case 'email':
-                setEmail(value);
-                break;
-
-            case 'password':
-                setPassword(value);
-                break;
-
-            default:
-                return;
-        }
+    const handleNameChange = (event) => {
+        setName(event.target.value);
+    };
+    const handleEmailChange = (event) => {
+        setEmail(event.target.value);
+    };
+    const handlePasswordChange = (event) => {
+        setPassword(event.target.value);
     };
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        const user = { name, email, password };
-        dispatch(authOperations.register(user));
+    // const handleChange = (event) => {
+    //     const { name, value } = event.currentTarget;
 
-        reset();
-    };
+    //     switch (name) {
+    //         case 'name':
+    //             setName(value);
+    //             break;
+
+    //         case 'email':
+    //             setEmail(value);
+    //             break;
+
+    //         case 'password':
+    //             setPassword(value);
+    //             break;
+
+    //         default:
+    //             return;
+    //     }
+    // };
 
     const reset = () => {
         setName('');
         setEmail('');
         setPassword('');
+    };
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        dispatch(authOperations.register({ name, email, password }));
+        // const user = { name, email, password };
+        // dispatch(authOperations.register(user));
+
+        reset();
     };
 
     return (
@@ -59,7 +70,7 @@ function RegisterView() {
                         type="email"
                         name="email"
                         value={email}
-                        onChange={handleChange}
+                        onChange={handleEmailChange}
                     />
                 </label>
                 <label className={styles.registerLabel}>
@@ -68,7 +79,7 @@ function RegisterView() {
                         type="password"
                         name="password"
                         value={password}
-                        onChange={handleChange}
+                        onChange={handlePasswordChange}
                     />
                 </label>
                 <label className={styles.registerLabel}>
@@ -77,7 +88,7 @@ function RegisterView() {
                         type="name"
                         name="name"
                         value={name}
-                        onChange={handleChange}
+                        onChange={handleNameChange}
                     />
                 </label>
                 <button type="submit" className={styles.registerButton}>

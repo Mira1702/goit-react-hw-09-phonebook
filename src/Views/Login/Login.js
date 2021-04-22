@@ -10,34 +10,44 @@ function LoginView() {
 
     const dispatch = useDispatch();
 
-    const handleChange = (event) => {
-        const { name, value } = event.currentTarget;
+    const handleEmailChange = (event) => {
+        setEmail(event.target.value);
+    };
 
-        switch (name) {
-            case 'email':
-                setEmail(value);
-                break;
+    const handlePasswordChange = (event) => {
+        setPassword(event.target.value);
+    };
 
-            case 'password':
-                setPassword(value);
-                break;
-            default:
-                return;
-        }
+    // const handleChange = (event) => {
+    //     const { name, value } = event.currentTarget;
+
+    //     switch (name) {
+    //         case 'email':
+    //             setEmail(value);
+    //             break;
+
+    //         case 'password':
+    //             setPassword(value);
+    //             break;
+    //         default:
+    //             return;
+    //     }
+    // };
+
+    const reset = () => {
+        setEmail('');
+        setPassword('');
     };
 
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        const user = { email, password };
-        dispatch(authOperations.login(user));
+        dispatch(authOperations.login({ email, password }));
+
+        // const user = { email, password };
+        // dispatch(authOperations.login(user));
 
         reset();
-    };
-
-    const reset = () => {
-        setEmail('');
-        setPassword('');
     };
 
     return (
@@ -54,7 +64,7 @@ function LoginView() {
                         type="email"
                         name="email"
                         value={email}
-                        onChange={handleChange}
+                        onChange={handleEmailChange}
                     />
                 </label>
                 <label className={styles.loginLabel}>
@@ -63,7 +73,7 @@ function LoginView() {
                         type="password"
                         name="password"
                         value={password}
-                        onChange={handleChange}
+                        onChange={handlePasswordChange}
                     />
                 </label>
                 <button type="submit" className={styles.loginButton}>

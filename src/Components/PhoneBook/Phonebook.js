@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import shortid from 'shortid';
 import styles from './Phonebook.module.css';
 import * as operations from '../../Redux/contacts/operations';
 import { getContacts } from '../../Redux/contacts/selectors';
 
 function PhoneBook() {
-    const [contact, setContact] = useState('');
+    // const [contact, setContact] = useState('');
     const [name, setName] = useState('');
     const [number, setNumber] = useState('');
 
@@ -17,7 +17,7 @@ function PhoneBook() {
         const { name, value } = event.currentTarget;
         switch (name) {
             case 'name':
-                setContact(value);
+                setName(value);
                 break;
 
             default:
